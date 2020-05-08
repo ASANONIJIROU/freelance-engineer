@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="ja">
+ <head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex,nofollow" />
+  <title>ポートフォリオ2.0</title>
+  <meta name="descripition" content="特にありません。めんちゃい！！"　/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+　<meta name="twitter:card" content="with Large Image" />
+　<meta name="twitter:site" content="＠nijirouasano" />
+　<meta property="og:url" content="ページのURL">
+　<meta property="og:title" content="ポートフォリオ2.0">
+　<meta property="og:descripition" content="特にありません。めんちゃい！！" />
+　<meta property="og:image" content="/Users/nijirouasano/Desktop/html&css/business.jpg" />
+  <script>
+$(function() {
+  $('.menu-trigger').on('click',function(){
+     if($(this).hasClass('active')){
+      $(this).removeClass('active');
+      $('main').removeClass('open');
+      $('.once').removeClass('open');
+      $('.overlay').removeClass('open');
+      $('.alternative').removeClass('open');
+     } else {
+      $(this).addClass('active');
+      $('main').addClass('open');
+      $('.once').addClass('open');
+      $('.overlay').addClass('open');
+      $('.alternative').addClass('open');
+     }
+    });
+  $('.overlay').on('click',function(){
+     if($(this).hasClass('open')){
+      $(this).removeClass('open');
+      $('.menu-trigger').removeClass('active');
+      $('main').removeClass('open');
+      $('.once').removeClass('open');
+      $('.alternative').removeClass('open');
+     }
+    });
+  $('.alternative').on('click',function(){
+     if($(this).hasClass('open')){
+      $(this).removeClass('open');
+      $('.menu-trigger').removeClass('active');
+      $('main').removeClass('open');
+      $('.once').removeClass('open');
+      $('.overlay').removeClass('open');
+     }
+    });
+  $('.article-title').on('click',function(){
+      $(this).next().slideToggle(200);
+      $(this).toggleClass('open');
+    });
+});
+  </script>
+  <style>
+html,body,ul,ol,li,
+h1,h2,h3,h4,h5,h6,p,div{
+  margin:0;
+  padding:0;
+}
+*{
+  box-sizing:border-box;
+}
+body{
+  font-family: 'Hiragino Kaku Gothic ProN W3', sans-serif;
+}
+.contents li{
+  list-style: none;
+}
+.contents a{
+  text-decoration: none;
+}
+.contents{
+  width:100%;
+  max-width:1170px;
+  margin:0 auto;
+  text-align:center;
+  overflow:hidden;
+}
+.alert{
+  width:100%;
+  color:white;
+  background-color:rgb(0, 0, 0, 0.8);
+  font-size:18px;
+  letter-spacing:3px;
+  padding:40px 0;
+  position:fixed;
+  bottom:0px;
+  z-index:11;
+  border-radius:0;
+  margin-bottom:0;
+  transition:all 2s;
+  max-width:1170px;
+}
+.close{
+  cursor:pointer;
+}
+#page_top{
+  width:50px;
+  height:50px;
+  position:fixed;
+  right:20px;
+  bottom:125px;
+  z-index:11;
+  background-color:black;
+  opacity:0.8;
+}
+#page_top a{
+  position:relative;
+  display:block;
+  width:50px;
+  height:50px;
+}
+#page_top a::before{
+  font-family:'Font Awesome 5 Free';
+  font-weight:900;
+  content:'\f106';
+  font-size:25px;
+  color:white;
+  position:absolute;
+  width:25px;
+  height:25px;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+  padding-top:5px;
+  margin:0 auto;
+  text-align:center;
+}
+.mobile-menu{
+  text-align:right;
+  padding-top:7%;
+  padding-right:10%;
+  margin-bottom:55px;
+}
+.mobile-menu a{
+  color:black;
+  padding:6px;
+  margin-left:30px;
+  font-size:19px;
+  opacity:0.7;
+}
+.mobile-menu a:hover{
+  opacity:1.0;
+}
+.overlay {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  opacity: 0;
+  transition: opacity .5s;
+}
+.overlay.open {
+  width: 100%;
+  height: 6000px;
+  opacity: 1;
+}
+.menu-trigger {
+  display: inline-block;
+  width: 36px;
+  height: 27px;
+  vertical-align: middle;
+  cursor: pointer;
+  position:absolute;
+  top: 30px;
+  right: 30px;
+  z-index:100;
+  display:none;
+}
+.menu-trigger span {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color:black;
+  transition: all .5s;
+}
+.menu-trigger.active span {
+  background-color:white;
+}
+.menu-trigger span:nth-of-type(1) {
+  top: 0;
+}
+.menu-trigger.active span:nth-of-type(1) {
+  transform: translateY(12px) rotate(-45deg);
+}
+.menu-trigger span:nth-of-type(2) {
+  top: 12px;
+}
+.menu-trigger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0;
+}
+.menu-trigger.active span:nth-of-type(3) {
+  transform: translateY(-12px) rotate(45deg);
+}
+.once {
+  width: 250px;
+  height: 100%;
+  padding-top: 100px;
+  background-color: rgba(255, 69, 153, 0.8);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  transform: translate(250px);
+  transition: all .5s;
+}
+.once.open {
+  transform: translateZ(0);
+}
+.once li{
+  margin-top:30px;
+  color:white;
+  opacity:0.8;
+}
+.once li:hover{
+  opacity:1.0;
+}
+.once a{
+  color:white;
+  opacity:0.8;
+}
+.once a:hover{
+  opacity:1.0;
+}
+.alternative{
+  padding-top:20px;
+  border-bottom:2px solid white;
+  padding-bottom:0;
+  display:inline-block;
+  cursor:pointer;
+}
+.once .article-title{
+  position:relative;
+  cursor:pointer;
+  opacity:0.8;
+}
+.once .article-title:after{
+  content:"";
+  position:absolute;
+  top:15%;
+  left:70%;
+  transition: all 0.2s ease-in-out;
+  width:10px;
+  height:10px;
+  border-top: solid 2px white;
+  border-right: solid 2px white;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.once .article-title.open:after{
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 45%;
+}
+.once .accordion-content{
+  display:none;
+}
+.queen{
+  color:black;
+  font-family:cursive;
+  margin:0 auto;
+  font-size:200px;
+  padding-top:30px;
+  padding-bottom:80px;
+}
+.pink{
+  color:rgb(255, 79, 163, 0.8);
+}
+.hand{
+  position:relative;
+  bottom:30px;
+  height:3px;
+  width:35%;
+  background-color:black;
+}
+.leg{
+  position:relative;
+  left:25%;
+  bottom:0;
+  height:3px;
+  width:75%;
+  background-color:black;
+}
+.first{
+  width:100%;
+  text-align:left;
+  background-color:white;
+}
+#profile{
+  padding-top:50px;
+  padding-bottom:30px;
+  font-size:50px;
+  width:90%;
+  margin:0 auto;
+}
+.information{
+  width:90%;
+  margin:0 auto;
+  padding-bottom:15px;
+  font-size:20px;
+}
+.career{
+  width:90%;
+  margin:0 auto;
+  padding-bottom:15px;
+  font-size:20px;
+}
+.skills{
+  width:90%;
+  margin:0 auto;
+  padding-bottom:15px;
+  font-size:20px;
+}
+.tab-menu{
+  width:80%;
+  margin-left:8%;
+  margin-right:12%;
+  padding-bottom:35px;
+}
+.nav a{
+  color:black;
+  font-size:18px;
+}
+.nav a:hover{
+  color:rgb(50,50,50);
+}
+.tab-pane{
+  font-size:20px;
+}
+.time{
+  width:90%;
+  margin:0 auto;
+  font-size:20px;
+}
+.possible{
+  width:90%;
+  margin:0 auto;
+  padding-bottom:30px;
+  font-size:20px;
+}
+.greeting{
+  width:90%;
+  margin:0 auto;
+  padding-bottom:45px;
+  font-size:20px;
+}
+.second{
+  width:100%;
+  text-align:left;
+  background-color:rgb(240,240,240);
+}
+#service{
+  font-size:50px;
+  padding-top:50px;
+  padding-bottom:30px;
+  width:90%;
+  margin:0 auto;
+}
+#job , #season , #money , #bag , #making , #pass{
+  font-size:28px;
+  padding-bottom:25px;
+  width:90%;
+  margin:0 auto;
+}
+.wrap{
+  display:flex;
+  flex-wrap:wrap;
+}
+.separate{
+  width:44%;
+  border:2px solid gray;
+  padding:30px;
+}
+.separate h5{
+  text-align:center;
+  padding-bottom:25px;
+}
+.one{
+  margin-left:4%;
+  margin-right:2%;
+  margin-bottom:40px;
+}
+.two{
+  margin-left:2%;
+  margin-right:4%;
+  margin-bottom:40px;
+}
+.three{
+  margin-left:4%;
+  margin-right:2%;
+  margin-bottom:100px;
+}
+.four{
+  margin-left:2%;
+  margin-right:4%;
+  margin-bottom:100px;
+}
+.times , .sum , .give{
+  width:85%;
+  margin:0 auto;
+  padding-bottom:60px;
+  font-size:20px;
+}
+.circle{
+  width:85%;
+  margin:0 auto;
+  padding:45px;
+  background-color:rgba(255, 69, 153, 0.4);
+  border-radius:10px;
+  box-shadow:0 0 5px rgba(100,100,100,0.7);
+  margin-bottom:50px;
+  line-height:30px;
+}
+.sun , .moon , .apple , .bird , .cookie , .dish , .english , .zero{
+  font-size:18px;
+}
+.moon , .bird , .cookie , .dish , .english{
+  padding-top:50px;
+}
+.zero{
+  padding-top:15px;
+}
+.third{
+  width:100%;
+  text-align:left;
+  background-color:white;
+}
+#questions{
+  font-size:50px;
+  padding-top:50px;
+  padding-bottom:30px;
+  width:90%;
+  margin:0 auto;
+}
+.third .article-title{
+  position:relative;
+  padding-left:5%;
+  padding-right:12%;
+  margin-bottom:40px;
+  cursor:pointer;
+}
+.third .article-title:after{
+  content:"";
+  position:absolute;
+  top:20%;
+  right:5%;
+  transition: all 0.2s ease-in-out;
+  width:15px;
+  height:15px;
+  border-top: solid 2.5px black;
+  border-right: solid 2.5px black;
+  -webkit-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+.third .article-title.open:after{
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 45%;
+}
+.third .accordion-content{
+  display:none;
+  padding-left:10%;
+  padding-right:10%;
+  padding-bottom:75px;
+  line-height:30px;
+  font-size:18px;
+}
+.hello{
+  margin-left:7%;
+  margin-right:5%;
+  padding-top:75px;
+  padding-bottom:50px;
+}
+.hello p{
+  display:inline;
+  font-size:22px;
+  border-bottom:4px dotted rgb(255, 69, 153);
+}
+.morning{
+  margin-left:7%;
+  margin-right:5%;
+  padding-bottom:75px;
+}
+.morning p{
+  display:inline;
+  font-size:22px;
+  border-bottom:4px dotted rgb(255, 69, 153);
+}
+.forth{
+  width:100%;
+  text-align:center;
+  background-color:white;
+}
+.boss{
+  padding-top:30px;
+  padding-bottom:80px;
+}
+.forth a{
+  color:black;
+  font-size:20px;
+  padding:25px 30px;
+  border:3px solid black;
+  border-radius:3px;
+  background-color:white;
+  opacity:0.8;
+  transition:all 0.5s;
+}
+.forth a:hover{
+  color:white;
+  background-color:black;
+}
+.forth a:active{
+  opacity:1.0;
+}
+.fifth{
+  width:100%;
+  text-align:center;
+  background-color:white;
+}
+.january , .february , .march{
+  display:none;
+}
+.swiper-content{
+  width:200%;
+  margin:0 -50%;
+}
+.swiper-photo{
+  width:100%;
+  margin-bottom:45px;
+  border-top:4px solid gray;
+  border-left:2px solid gray;
+  border-right:2px solid gray;
+  border-bottom:4px solid gray;
+}
+.swiper-button-prev{
+  margin-top:-15.8%;
+  position:relative;
+  left:32.5%;
+  background-size:18px 29px;
+  width:30px;
+  height:30px;
+  padding:30px;
+  border-radius:50%;
+  background-color:rgba(200,200,200,0.6);
+}
+.swiper-button-next{
+  margin-top:-60.3px;
+  position:relative;
+  left:64.8%;
+  background-size:18px 29px;
+  width:30px;
+  height:30px;
+  padding:30px;
+  border-radius:50%;
+  background-color:rgba(200,200,200,0.6);
+}
+.swiper-pagination{
+  position:relative;
+}
+.swiper-pagination-bullet{
+  width:12px;
+  height:12px;
+}
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+  margin:0 8px;
+}
+.garbage{
+  width:100%;
+  height:350px;
+}
+.castle{
+  font-size:30px;
+  padding-top:50px;
+  padding-bottom:120px;
+}
+@media all and (min-width:1170px){
+  #page_top{
+    display:none;
+  }
+}
+@media all and (max-width:1050px){
+  .january , .february , .april{
+    display:none;
+  }
+  .march{
+    display:block;
+  }
+  .swiper-content{
+    width:200%;
+    margin:0 -50%;
+  }
+  .swiper-photo{
+    width:100%;
+    margin-bottom:45px;
+    border-top:4px solid gray;
+    border-left:2px solid gray;
+    border-right:2px solid gray;
+    border-bottom:4px solid gray;
+  }
+  .swiper-button-prev{
+    margin-top:-16.0%;
+    position:relative;
+    left:32.5%;
+    background-size:18px 29px;
+    width:30px;
+    height:30px;
+    padding:28px;
+    border-radius:50%;
+    background-color:rgba(200,200,200,0.6);
+  }
+  .swiper-button-next{
+    margin-top:-56px;
+    position:relative;
+    left:64.7%;
+    background-size:18px 29px;
+    width:30px;
+    height:30px;
+    padding:28px;
+    border-radius:50%;
+    background-color:rgba(200,200,200,0.6);
+  }
+  .swiper-pagination{
+    position:relative;
+  }
+  .swiper-pagination-bullet{
+    width:12px;
+    height:12px;
+  }
+  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+    margin:0 8px;
+  }
+  .garbage{
+    width:100%;
+    height:300px;
+  }
+}
+@media all and (max-width:1000px){
+  .alert{
+    font-size:17px;
+    letter-spacing:3px;
+  }
+  .queen{
+    font-size:150px;
+  }
+  .nav a{
+    font-size:16px;
+  }
+  .information , .career , .skills , .tab-pane , .time , .possible , .greeting{
+    font-size:18px;
+  }
+  #job , #season , #money , #bag , #making , #pass{
+    font-size:25px;
+  }
+  .times , .sum , .give{
+    font-size:18px;
+  }
+  .sun , .moon , .apple , .bird , .cookie , .dish , .english , .zero{
+    font-size:17px;
+  }
+}
+@media all and (max-width:860px){
+  .january , .february , .april{
+    display:none;
+  }
+  .march{
+    display:block;
+  }
+  .swiper-content{
+    width:200%;
+    margin:0 -50%;
+  }
+  .swiper-photo{
+    width:100%;
+    margin-bottom:45px;
+    border-top:4px solid gray;
+    border-left:2px solid gray;
+    border-right:2px solid gray;
+    border-bottom:4px solid gray;
+  }
+  .swiper-button-prev{
+    margin-top:-17.1%;
+    position:relative;
+    left:32.5%;
+    background-size:18px 29px;
+    width:30px;
+    height:30px;
+    padding:25px;
+    border-radius:50%;
+    background-color:rgba(200,200,200,0.6);
+  }
+  .swiper-button-next{
+    margin-top:-50.1px;
+    position:relative;
+    left:64.2%;
+    background-size:18px 29px;
+    width:30px;
+    height:30px;
+    padding:25px;
+    border-radius:50%;
+    background-color:rgba(200,200,200,0.6);
+  }
+  .swiper-pagination{
+    position:relative;
+  }
+  .swiper-pagination-bullet{
+    width:12px;
+    height:12px;
+  }
+  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+    margin:0 8px;
+  }
+  .garbage{
+    width:100%;
+    height:250px;
+  }
+}
+@media all and (max-width:670px){
+  .alert{
+    font-size:16px;
+    letter-spacing:2px;
+    z-index:2;
+  }
+  #page_top{
+    z-index:2;
+  }
+  .menu-trigger{
+    display:inline-block;
+  }
+  .mobile-menu a{
+    display:none;
+  }
+  .queen{
+    font-size:100px;
+  }
+  #profile{
+    font-size:40px;
+  }
+  #service{
+    font-size:40px;
+  }
+  #questions{
+    font-size:40px;
+  }
+  .separate{
+    width:92%;
+    border:2px solid gray;
+    padding:30px;
+  }
+  .separate h5{
+    text-align:left;
+    padding-bottom:25px;
+  }
+  .one{
+    margin-left:4%;
+    margin-right:4%;
+    margin-bottom:40px;
+  }
+  .two{
+    margin-left:4%;
+    margin-right:4%;
+    margin-bottom:40px;
+  }
+  .three{
+    margin-left:4%;
+    margin-right:4%;
+    margin-bottom:40px;
+  }
+  .four{
+    margin-left:4%;
+    margin-right:4%;
+    margin-bottom:60px;
+  }
+  .third .accordion-content{
+    font-size:16px;
+  }
+  .january , .march , .april{
+    display:none;
+  }
+  .february{
+    display:block;
+  }
+  .swiper-photo{
+    width:100%;
+    margin-bottom:40px;
+    border-top:0 solid gray;
+    border-left:0 solid gray;
+    border-right:0 solid gray;
+    border-bottom:0 solid gray;
+  }
+  .swiper-button-prev{
+    position:absolute;
+    top:95%;
+    left:8%;
+    background-size:25px 41px;
+    width:27px;
+    height:44px;
+    padding:0;
+    border-radius:0;
+    background-color:white;
+    margin-top:-22px;
+  }
+  .swiper-button-next{
+    position:absolute;
+    top:95%;
+    left:86%;
+    background-size:25px 41px;
+    width:27px;
+    height:44px;
+    padding:0;
+    border-radius:0;
+    background-color:white;
+    margin-top:-22px;
+  }
+  .swiper-pagination{
+    position:relative;
+  }
+  .swiper-pagination-bullet{
+    width:12px;
+    height:12px;
+  }
+  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+    margin:0 8px;
+  }
+}
+@media all and (max-width:550px){
+  .alert{
+    font-size:16px;
+    letter-spacing:1px;
+    padding-top:40px;
+    padding-bottom:30px;
+  }
+  .third .article-title{
+    font-size:20px;
+  }
+  .third .article-title:after{
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+  }
+  .hello p{
+    font-size:18px;
+  }
+  .morning p{
+    font-size:18px;
+  }
+  .castle{
+    font-size:25px;
+  }
+}
+@media all and (max-width:503px){
+  .overlay.open {
+    height: 6500px;
+  }
+}
+@media all and (max-width:450px){
+  .menu-trigger{
+    height:25px;
+  }
+  .menu-trigger span{
+    height:1px;
+  }
+  .hand{
+    height:2px;
+  }
+  .leg{
+    height:2px;
+  }
+  #profile{
+    font-size:35px;
+  }
+  #service{
+    font-size:35px;
+  }
+  #questions{
+    font-size:35px;
+  }
+  .nav a{
+    font-size:15px;
+    padding:4px 6px;
+  }
+  .information , .career , .skills , .tab-pane , .time , .possible , .greeting{
+    font-size:16px;
+  }
+  #job , #season , #money , #bag , #making , #pass{
+    font-size:23px;
+  }
+  .times , .sum , .give{
+    font-size:16px;
+  }
+  .sun , .moon , .apple , .bird , .cookie , .dish , .english , .zero{
+    font-size:16px;
+  }
+  .third .article-title:after{
+    width:12px;
+    height:12px;
+    border-top: solid 2px black;
+    border-right: solid 2px black;
+  }
+  .forth a{
+    font-size:15px;
+    padding:15px 20px;
+  }
+  .february , .march , .april{
+    display:none;
+  }
+  .january{
+    display:block;
+  }
+  .swiper-photo{
+    width:100%;
+    margin-bottom:32px;
+    border-top:0 solid gray;
+    border-left:0 solid gray;
+    border-right:0 solid gray;
+    border-bottom:0 solid gray;
+  }
+  .swiper-button-prev{
+    position:absolute;
+    top:93%;
+    left:8%;
+    background-size:18px 29px;
+    width:27px;
+    height:44px;
+    padding:0;
+    border-radius:0;
+    background-color:white;
+    margin-top:-22px;
+  }
+  .swiper-button-next{
+    position:absolute;
+    top:93%;
+    left:85%;
+    background-size:18px 29px;
+    width:27px;
+    height:44px;
+    padding:0;
+    border-radius:0;
+    background-color:white;
+    margin-top:-22px;
+  }
+  .swiper-pagination{
+    position:relative;
+  }
+  .swiper-pagination-bullet{
+    width:8px;
+    height:8px;
+  }
+  .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{
+    margin:0 4px;
+  }
+  .queen{
+    font-size:65px;
+  }
+}
+@media all and (max-width:367px){
+  .overlay.open {
+    height: 7000px;
+  }
+}
+  </style>
+ </head>
+ <body>
+  <div class="contents">
+   <div class="alert alert-dismissible fade show">
+   【迅速対応】17才中卒が格安で高品質なサイトを作ります！！
+    <a class="close" data-dismiss="alert">
+     &times;
+    </a>
+   </div>
+   <div id="page_top"><a href=""></a></div>
+   <header>
+    <div class="mobile-menu">
+     <a href="#profile">プロフィール</a>
+     <a href="#service">サービス</a>
+     <a href="#questions">Q&A</a>
+    </div>
+    <div class="menu-trigger" href="">
+     <span></span>
+     <span></span>
+     <span></span>
+    </div>
+    <nav class="once">
+     <ul>
+      <li><a href="#profile">プロフィール</a></li>
+      <li class="article-title">サービス</li>
+      <div class="accordion-content">
+      <li><a href="#job">代行内容</a></li>
+      <li><a href="#season">納期について</a></li>
+      <li><a href="#money">料金について</a></li>
+      <li><a href="#bag">ご用意いただくもの</a></li>
+      <li><a href="#making">制作手順</a></li>
+      <li><a href="#pass">納品について</a></li>
+      </div>
+      <li><a href="#questions">Q&A</a></li>
+      <li class="alternative">閉じる</li>
+     </ul>
+    </nav>
+    <div class="overlay"></div>
+    <h1 class="queen"><span class="pink">A</span>SANO<br>NI<span class="pink">J</span>IROU</h1>
+    <div class="hand"></div>
+    <div class="leg"></div>
+   </header>
+   <div class="main">
+    <div class="first">
+     <h2 id="profile">Profile</h2>
+     <p class="information">浅野虹朗／17歳／住所：岐阜／中卒フリーランスwebエンジニア</p>
+     <p class="career">経歴　　小学1年生から中学3年生までの９年間サッカーに明け暮れ、中学ではサッカー部のキャプテンを務めるが、学校の成績では学年最下位を叩き出す。
+       その後なんとか県内の進学校に入学し、猛勉強の末学年1位の成績を叩き出す。そして１年生の３月31日高校を中退し、1年間のアルバイト＆勉強生活を経て今にいたる。</p>
+     <p class="skills">スキル</p>
+     <div class="tab-menu">
+      <ul class="nav nav-tabs">
+       <li class="nav-item"><a href="#html" class="nav-link active" data-toggle="tab">HTML</a></li>
+       <li class="nav-item"><a href="#css" class="nav-link" data-toggle="tab">CSS</a></li>
+       <li class="nav-item"><a href="#bootstrap" class="nav-link" data-toggle="tab">Bootstrap</a></li>
+       <li class="nav-item"><a href="#jquery" class="nav-link" data-toggle="tab">jQuery</a></li>
+      </ul>
+      <div class="tab-content">
+       <div id="html" class="tab-pane active"><p>ウェブページの作成に使用される言語です。CSSと組み合わせることで、静的なページを作り上げることができます。</p></div>
+       <div id="css" class="tab-pane"><p>ウェブページの作成に使用される言語です。HTMLと組み合わせることで、静的なページを作り上げることができます。</p></div>
+       <div id="bootstrap" class="tab-pane"><p>HTML／CSS／JavaScriptから構成される最も有名なWEBフレームワークです。</p></div>
+       <div id="jquery" class="tab-pane"><p>素敵な動きを手軽に実装できるJavaScriptライブラリです。 アニメーション効果をつけたり、Ajax（エイジャックス）を使って外部ファイルを読み込んだりと色々なことができます。</p></div>
+      </div>
+     </div>
+     <p class="time">対応可能時間</p>
+     <p class="possible">9:00~22:00(年中無休)</p>
+     <p class="greeting">まずはお気軽にお問い合わせください！</p>
+    </div>
+    <div class="second">
+     <h2 id="service">Service</h2>
+     <h4 id="job">代行内容</h4>
+     <div class="wrap">
+      <div class="separate one">
+       <h5>HTML・CSSを用いたコーディング</h5>
+       <p>サイトが不便でないことは、今やユーザーにとって当たり前の時代です。そのため、ユーザーの評価が
+         「期待通り＋10点」になるようなサイトを作ることを心がけております。特に、不便でないこと、デザイ
+         ン性が高いこと、優れたギミックが備わっていることの3拍子においてベストを尽くします。</p>
+      </div>
+      <div class="separate two">
+       <h5>jQueryを用いたアニメーション実装</h5>
+       <p>HTML・CSSを用いたコーディングで述べた「優れたギミック」を作る上で、動的コーディングは欠かせ
+         ないものになります。そのため、このポートフォリオでも使用されているようなハンバーガーメニュー、
+         ページトップに戻るボタン、アラート、画像スライダーのような動的コーディングを実装します。</p>
+      </div>
+      <div class="separate three">
+       <h5>レスポンシブ対応</h5>
+       <p>レスポンシブ対応はスマホ用やタブレット用のサイトを作成することです。スマホの画面でPC版のサイ
+         トを見るとなると、文字や画像が見づらくなったりボタンが押しづらかったりするため、レスポンシブ
+         対応のオプションはつけられることをお勧めします。</p>
+      </div>
+      <div class="separate four">
+       <h5>SEO対策</h5>
+       <p>SEO対策は主にGoogle検索においてそのサイトが上位に表示され、またそのサイトがユーザーの目的に
+         合ったものになるよう工夫することです。より多くの方にサイトを見てもらい、さらに評価してもらうた
+         めには欠かせないものです。（※SEO対策は無料でさせていただきます！！）</p>
+      </div>
+     </div>
+     <div id="season">納期について</div>
+     <p class="times">受注から最短翌日、最長1週間程度と、比較的早めの納品が可能です。
+       <br>※ページ内容、ページ数によって変動しますので、まずはご相談いただけますと幸いです。</p>
+     <div id="money">料金について</div>
+     <p class="sum">サービス価格は3,000円ですが、レスポンシブ対応で+2,000円、1ページの追加につき+1,000円となりますのでご了承ください。
+       <br>例）レスポンシブ対応した3ページのサイトを作って欲しい。
+       <br>→3,000円(サービス価格)+2,000円(レスポンシブ対応)+1,000円(1ページ追加)×3(ページ数)=8,000円</p>
+     <div id="bag">ご用意いただくもの</div>
+      <div class="circle">
+       <p class="sun">・掲載コンテンツ（文章、キャッチコピー、住所、料金表、翻訳文等）<br>・デザイン資料（デザインカンプ、ワイヤーフレーム、素材等）<br>・ご説明資料（参考にしたいサイトのURLなどでも可）</p>
+       <p class="moon">☆可能な限りお客様とサイトのイメージを共有したいので、より詳細な情報を送っていただけますと幸いです。よろしくお願いいたします！<br>※また、レンタルサーバーの用意とドメインの取得はお客様自身でお願いします。</p>
+      </div>
+     <div id="making">制作手順</div>
+      <div class="circle">
+       <p class="apple">1.まずはDMまたは「見積もり・カスタマイズの相談をする」ボタンよりお問い合わせください。<br>※お問い合わせの際は以下の内容のご記入をお願いいたします。
+       <br>制作ページ数/レスポンシブ対応の有無/希望納期/ワイヤーフレーム（サイトの骨組み）のご用意（あり・なし）/その他ご要望等</p>
+       <p class="zero">※また、ご依頼いただく際には上記の「ご用意いただくもの」が必要になりますので、事前にご準備の程よろしくお願いいたします。</p>
+       <p class="bird">2.お見積もりを出させていただきますので、ご確認後問題がなければ発注していただきます。</p>
+       <p class="cookie">3.発注後、改めてどのようなサイトが作りたいかについて詳細なヒアリングをさせていただきます。</p>
+       <p class="dish">4.コーディング完了時に一旦確認をお願いいたします。</p>
+       <p class="english">5.構築完了後にプレビューを確認していただき、問題がなければ納品させていただきます。
+       <br>※完成したサイトはポートフォリオとして掲載させていただくことがございます。もし掲載不可の場合はその旨をご連絡ください。</p>
+      </div>
+     <div id="pass">納品について</div>
+     <p class="give">HTML、CSS、画像データをZIP形式でまとめたものを納品いたします。納品後はご利用のwebサーバーに応じて設置してください。</p>
+    </div>
+    <div class="third">
+     <h2 id="questions">Q&A</h2>
+     <h4 class="article-title">Q. ECサイトは作れますか？</h4>
+     <div class="accordion-content"><p>A. ECサイトの制作は現在承っておりません。当サービスではホームページまたはランディングページの制作をさせていただきます。</p></div>
+     <h4 class="article-title">Q. ハンバーガーメニュー（ドロワーメニュー）などは作れますか？</h4>
+     <div class="accordion-content"><p>A. はい、可能です。他にも画像のスライダーや広告などに使われるアラート、ページトップに戻るボタンなどは作成可能です。まずはお気軽にご相談ください！</p></div>
+     <h4 class="article-title">Q. レスポンシブ対策やSEO対策とは何ですか？</h4>
+     <div class="accordion-content"><p>A. レスポンシブ対応はスマホ用やタブレット用のサイトを作成することです。スマホの画面でPC版のサイトを見るとなると、文字や画像が見づらくなったりボタンが押しづらかったりするため、
+         レスポンシブ対応のオプションはつけられることをお勧めします。<br>SEO対策は主にGoogle検索においてそのサイトが上位に表示され、またそのサイトがユーザーの目的に合ったものになるよう工夫することです。
+         より多くの方にサイトを見てもらい、さらに評価してもらうためには欠かせないものです。</p></div>
+     <div class="hello"><p>最後まで責任を持って対応させていただきます。</p></div>
+     <div class="morning"><p>ぜひ一緒に、毎日開きたくなるような素敵なサイトを作りましょう！！</p></div>
+     <div class="dammy"></div>
+    </div>
+    <div class="forth">
+     <div class="boss"><a href="https://profile.coconala.com/users/1768373">浅野虹朗のココナラアカウントへ</a></div>
+    </div>
+    <div class="fifth">
+     <div class="swiper-container january">
+      <div class="swiper-wrapper">
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/bear.jpg" alt="Swiper01"></div>
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/fox.jpg" alt="Swiper02"></div>
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/xmas.jpg" alt="Swiper03"></div>
+      </div>
+      <div class="swiper-pagination swiper-pagination-black"></div>
+      <div class="swiper-button-prev swiper-button-black"></div>
+      <div class="swiper-button-next swiper-button-black"></div>
+     </div>
+     <div class="swiper-container february">
+      <div class="swiper-wrapper">
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/bear2.jpg" alt="Swiper01"></div>
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/fox2.jpg" alt="Swiper02"></div>
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/xmas2.jpg" alt="Swiper03"></div>
+      </div>
+      <div class="swiper-pagination swiper-pagination-black"></div>
+      <div class="swiper-button-prev swiper-button-black"></div>
+      <div class="swiper-button-next swiper-button-black"></div>
+     </div>
+     <div class="swiper-content march">
+      <div class="swiper-wrapper">
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/bear2.jpg" alt="Swiper01"></div>
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/fox2.jpg" alt="Swiper02"></div>
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/xmas2.jpg" alt="Swiper03"></div>
+      </div>
+      <div class="swiper-pagination swiper-pagination-black"></div>
+      <div class="swiper-button-prev swiper-button-black"></div>
+      <div class="swiper-button-next swiper-button-black"></div>
+      <div class="garbage"></div>
+     </div>
+     <div class="swiper-content april">
+      <div class="swiper-wrapper">
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/bear3.jpg" alt="Swiper01"></div>
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/fox3.jpg" alt="Swiper02"></div>
+       <div class="swiper-slide"><img class="swiper-photo" src="/Users/nijirouasano/Desktop/html&css/xmas3.jpg" alt="Swiper03"></div>
+      </div>
+      <div class="swiper-pagination swiper-pagination-black"></div>
+      <div class="swiper-button-prev swiper-button-black"></div>
+      <div class="swiper-button-next swiper-button-black"></div>
+      <div class="garbage"></div>
+     </div>
+     <div class="castle">Thank you for waching!!</div>
+    </div>
+   </div>
+  </div>
+  <script>
+  var swiper = new Swiper('.swiper-container', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop:true,
+      speed:500,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: true
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+    });
+  var swiper = new Swiper('.swiper-content', {
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      loop:true,
+      speed:500,
+      slidesPerView:3,
+      spaceBetween:0,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: true
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true,
+      },
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+ </body>
+</html>
